@@ -1,0 +1,783 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body> 
+ 
+  <header class="bg-gradient-to-r from-slate-800 to-black p-4  text-white shadow-2xl sticky top-0 z-50 transform transition-all duration-500 ease-in-out">
+    <div class="container mx-auto flex justify-between items-center">
+  
+      <!-- Logo with hover animation -->
+      <h1 class="text-4xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:scale-105 transform transition-transform duration-300">
+        Portfo<span class="text-white">lio</span>
+      </h1>
+  
+      <!-- Hamburger button for mobile -->
+      <button id="menu-btn" class="block lg:hidden p-2 rounded-md bg-slate-700 hover:bg-slate-600 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+  
+      <!-- Navigation menu (hidden on mobile, visible on larger screens) -->
+      <nav id="menu" class="hidden lg:flex space-x-8 text-lg font-medium items-center">
+        <a href="#home" class="relative group flex items-center space-x-2 hover:text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.707-10.293a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L10 10.414 8.707 11.707a1 1 0 01-1.414-1.414l3-3z" clip-rule="evenodd" />
+          </svg>
+          <span>Home</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+        </a>
+        <a href="#about" class="relative group flex items-center space-x-2 hover:text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-spin" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.25 4.5A1.5 1.5 0 016.75 3h6.5a1.5 1.5 0 011.5 1.5v3a.5.5 0 01-1 0v-3a.5.5 0 00-.5-.5h-6.5a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h6.5a.5.5 0 00.5-.5v-3a.5.5 0 011 0v3a1.5 1.5 0 01-1.5 1.5h-6.5a1.5 1.5 0 01-1.5-1.5v-9z" clip-rule="evenodd" />
+          </svg>
+          <span>About</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+        </a>
+        <a href="#project" class="relative group flex items-center space-x-2 hover:text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.25-9.75h2.5a.5.5 0 01.5.5v2.5a.5.5 0 01-.5.5h-2.5a.5.5 0 01-.5-.5v-2.5a.5.5 0 01.5-.5zm.5 4v-2h1v2h-1z" clip-rule="evenodd" />
+          </svg>
+          <span>Projects</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+        </a>
+        <a href="#contact" class="relative group flex items-center space-x-2 hover:text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-ping" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.707 9.293a1 1 0 010 1.414l-2.5 2.5a1 1 0 01-1.414-1.414l2.5-2.5a1 1 0 011.414 0zm4.586 1.414a1 1 0 010-1.414l2.5-2.5a1 1 0 011.414 1.414l-2.5 2.5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Contact</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+        </a>
+      </nav>
+  
+      <!-- Dark mode toggle button (remains on mobile)
+      <button class="ml-4 p-2 rounded-full bg-slate-700 hover:bg-slate-600 transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.707-.707M4.34 16.66l-.707-.707m14.14 7.78l-.707.707M6.34 6.34l-.707.707M21 12h1M3 12H2m16.95 4.95l-.707-.707M7.05 7.05l-.707-.707" />
+        </svg>
+      </button> -->
+    </div>
+  
+    <!-- Mobile menu (hidden by default, visible when toggled) -->
+    <div id="mobile-menu" class="lg:hidden hidden space-y-4 p-4 bg-slate-800">
+      <a href="#home" class="relative group flex items-center space-x-2 hover:text-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.707-10.293a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L10 10.414 8.707 11.707a1 1 0 01-1.414-1.414l3-3z" clip-rule="evenodd" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="relative group flex items-center space-x-2 hover:text-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-spin" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.25 4.5A1.5 1.5 0 016.75 3h6.5a1.5 1.5 0 011.5 1.5v3a.5.5 0 01-1 0v-3a.5.5 0 00-.5-.5h-6.5a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h6.5a.5.5 0 00.5-.5v-3a.5.5 0 011 0v3a1.5 1.5 0 01-1.5 1.5h-6.5a1.5 1.5 0 01-1.5-1.5v-9z" clip-rule="evenodd" />
+        </svg>
+        <span>About</span></a>
+      <a href="#project" class="relative group flex items-center space-x-2 hover:text-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.25-9.75h2.5a.5.5 0 01.5.5v2.5a.5.5 0 01-.5.5h-2.5a.5.5 0 01-.5-.5v-2.5a.5.5 0 01.5-.5zm.5 4v-2h1v2h-1z" clip-rule="evenodd" />
+        </svg>
+        <span>Projects</span></a>
+        <a href="#contact" class="relative group flex items-center space-x-2 hover:text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 group-hover:animate-ping" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.707 9.293a1 1 0 010 1.414l-2.5 2.5a1 1 0 01-1.414-1.414l2.5-2.5a1 1 0 011.414 0zm4.586 1.414a1 1 0 010-1.414l2.5-2.5a1 1 0 011.414 1.414l-2.5 2.5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Contact</span>
+        </a>
+    </div>
+  </header>
+  
+  <script>
+    // Toggle the mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+    <!-- home----name & img -->
+    <section id="home" class="relative flex  bg-gradient-to-r from-black to-slate-900 p-4 text-white shadow-2xl top-0 transform transition-all duration-500 ease-in-out h-screen">
+      <div class="relative z-20 top-24">
+         <div>
+        <h1 class="text-6xl font-bold h-24 font-serif">Hi.. I am,</h1>
+        <h1 class="text-6xl font-bold h-24 font-serif">Abdul Vahith</h1>
+        <h1 class="text-6xl font-bold font-serif">I am a Full Stack Developer</h1>
+          </div>
+
+         <div class="absolute left-56">
+          <h1 class="relative left-32 font-sans font-semibold text-2xl" >(specialized in.....)</h1>
+          <img src="img/mern (1).png" alt="mern"  width="250" class="relative left-20">
+        </div>
+      </div>
+      
+    
+      <!-- The image is absolutely positioned behind the text and covers the full screen -->
+      <div class="absolute inset-0 z-10">
+        <img class="w-full h-full object-cover opacity-30" src="img/devloper.jpg" alt="Developer Image" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
+        
+
+      </div> 
+    </section>
+
+                      <!-- //this section for about.......... -->
+
+
+    <section class=" bg-gradient-to-r from-black to-black text-white w-full h-full">
+      <a id="about" class="flex space-x-2 text-4xl justify-center p-5"> 
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500 flipping-icon bottom-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.25 4.5A1.5 1.5 0 016.75 3h6.5a1.5 1.5 0 011.5 1.5v3a.5.5 0 01-1 0v-3a.5.5 0 00-.5-.5h-6.5a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h6.5a.5.5 0 00.5-.5v-3a.5.5 0 011 0v3a1.5 1.5 0 01-1.5 1.5h-6.5a1.5 1.5 0 01-1.5-1.5v-9z" clip-rule="evenodd" />
+        </svg>
+        <div class="grid font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600">About</div>
+           </a>
+
+                                     <!--  bg-imgs for 2nd page -->
+  <section id="home" class="bg-gradient-to-r from-black to-slate-900  text-white shadow-2xl top-0 transform transition-all duration-500 ease-in-out h-screen">
+
+        <div class="z-20 ">
+          <div class="absolute inset-0 z-10">
+            <!-- Background Image with Opacity -->
+            <img class="w-full h-full object-cover absolute inset-0 bg-gradient-to-t-b from-black via-transparent to-black opacity-10" src="img/Ai.jpg" alt="Developer Image">
+            
+            <!-- Gradient for Blending the Image (Top and Bottom) -->
+          </div>
+           </div> 
+                                     <!-- skill  section-->
+</div>
+  
+<pre class="p-10 relative -top-20 leading-8 text-xl font-mono font-semibold pb-0"  id="typewriter">
+      <span class="var-highlight">let</span> About = {
+                      Profession      : <span class="string-highlight text-sm" > 'Full Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js)'</span>,
+                      Passion         : <span class="string-highlight text-sm"> 'Creating dynamic, user-focused applications that solve real-world problems'</span>,
+                      Collaboration   : <span class="string-highlight text-sm"> 'Enjoys working in team environments and contributing to collaborative projects
+                                                             Values diverse perspectives and sharing ideas to drive innovation'</span>,
+                      Problem-Solving : <span class="string-highlight text-sm"> 'Strong problem-solving skills that help turn challenges into growth opportunities'</span>,
+                      Interests       : <span class="string-highlight text-sm"> 'Passionate about contributing to open-source projects
+                                                             Enjoys working on personal projects to continuously sharpen skills'</span>,
+                      properties      : [<span class="string-highlight text-sm">'Javascript'</span>,
+                                         <span class="string-highlight text-sm">'HTML'</span>,
+                                         <span class="string-highlight text-sm">'CSS'</span>];
+                    }; </pre>
+
+                          <!-- <script>
+                              function setupTypewriter(t) {
+                                  var HTML = t.innerHTML;
+                      
+                                  t.innerHTML = "";
+                      
+                                  var cursorPosition = 0,
+                                      tag = "",
+                                      writingTag = false,
+                                      tagOpen = false,
+                                      typeSpeed = 1,
+                                      tempTypeSpeed = 0;
+                      
+                                  var type = function() {
+                      
+                                      if (writingTag === true) {
+                                          tag += HTML[cursorPosition];
+                                      }
+                      
+                                      if (HTML[cursorPosition] === "<") {
+                                          tempTypeSpeed = 0;
+                                          if (tagOpen) {
+                                              tagOpen = false;
+                                              writingTag = true;
+                                          } else {
+                                              tag = "";
+                                              tagOpen = true;
+                                              writingTag = true;
+                                              tag += HTML[cursorPosition];
+                                          }
+                                      }
+                                      if (!writingTag && tagOpen) {
+                                          tag.innerHTML += HTML[cursorPosition];
+                                      }
+                                      if (!writingTag && !tagOpen) {
+                                          if (HTML[cursorPosition] === " ") {
+                                              tempTypeSpeed = 0;
+                                          } else {
+                                              tempTypeSpeed = (Math.random() * typeSpeed) - 10;
+                                          }
+                                          t.innerHTML += HTML[cursorPosition];
+                                      }
+                                      if (writingTag === true && HTML[cursorPosition] === ">") {
+                                          tempTypeSpeed = (Math.random() * typeSpeed) - 10;
+                                          writingTag = false;
+                                          if (tagOpen) {
+                                              var newSpan = document.createElement("span");
+                                              t.appendChild(newSpan);
+                                              newSpan.innerHTML = tag;
+                                              tag = newSpan.firstChild;
+                                          }
+                                      }
+                      
+                                      cursorPosition += 1;
+                                      if (cursorPosition < HTML.length - 1) {
+                                          setTimeout(type, tempTypeSpeed);
+                                      }
+                                  };
+                      
+                                  return {
+                                      type: type
+                                  };
+                              }
+                      
+                              var typer = document.getElementById('typewriter');
+                              typewriter = setupTypewriter(typer);
+                              typewriter.type();
+                          </script> -->
+                      
+
+   <div class="pl-14  absolute">
+<h2 class="text-cyan font-bold text-2xl font-serif relative -top-2">skills</h2>
+         <ul class="pl-24 list-disc text-lg mt-10 leading-10 ">
+          <li class=" relative -top-10">Strong understanding of both front-end and back-end technologies</li>
+          <li class=" relative -top-10">Committed to staying up-to-date with industry trends</li>
+          <li class="relative -top-10 text-gold">Technologies I specialize in :-</li>
+        </ul>
+</div>   
+</section>
+
+
+<div class="bg-slate-900 relative -top-5 text-white ">
+<!-- front-end -->
+<div class="mt-5 pl-16 ">
+  <h1 class="text-slate-300 text-xl font-semibold font-serif pl-32 pt-5">Front-end Developments :-</h1>
+  <ul class="gap-10 p-10 flex justify-center font-semibold font-sans" >
+    <li><img src="img/html (1).png" alt="" style="width:70px; height:70px;">
+                    <p class="text-gray-300 text-center">HTML</p></li>
+    <li> <img src="img/CSS.webp " class="-mt-3" alt="" style="width:90px; height:90px;">
+                    <p class="text-gray-300 text-center -mt-2">CSS</p></li>
+    <li class=" flex flex-col items-center "> <img src="img/tailwindcss.png" alt="" style="width:90px; height: 50px;">
+                    <p class="text-gray-300 text-center mt-5">Tailwind CSS</p></li>
+    <li > <img src="img/js.png" style="width:90px; height:70px;"> 
+                   <p class="text-gray-300 text-center">Java Script</p></li>
+    <li > <img src="img/react.webp" alt=""style="width:70px; height:70px; ">
+                  <p class="text-gray-300 text-center">React</p> </li>
+    
+  </ul>
+</div>
+          <!-- back-end -->
+<div class="mt-5 pl-16 ">
+  <h1 class="text-slate-300 text-xl font-semibold font-serif pl-32 ">Back-end Developments :-</h1>
+  <ul class="gap-10 p-10 flex justify-center font-semibold font-sans" >
+    <li > <img src="img/js.png" style="width:90px; height:70px;"> 
+      <p class="text-gray-300 text-center">Java Script</p></li>
+      <li > <img src="img/redux.png" style="width:75px; height:75px;"> 
+        <p class="text-gray-300 text-center gap-3">Redux</p></li>
+    <li> <img src="img/mysql.png" alt="" style="width:100px; height:100px;" class="-mt-4">
+    <p class="text-gray-300 text-center -mt-2">My Sql</p></li>
+    <li class="text-gray-300 text-center"> <img src="img/MongoDB.png" style="width:80px; height:75px;"> 
+    <p>Mongo DB</p></li>
+    <li class="text-gray-300 text-center"> <img src="img/nodejs.png" alt=""style="width:60px; height:70px; ">
+    <p>Node JS</p> </li>
+  </ul>
+</div>
+        <!-- technologies -->
+<div class="mt-5 pl-16 ">
+  <h1 class="text-slate-300 text-xl font-semibold font-serif pl-32 ">Tools & Technologies :-</h1>
+  <ul class="gap-10 p-10 flex justify-center font-semibold font-sans" >
+    <li > <img src="img/gitt.png" style="width:70px; height:70px;"> 
+      <p class="text-gray-300 text-center gap-3">Git</p></li>
+    <li> <img src="img/GitHub-Symbol.png" alt="" style="width:130px; height:70px;">
+    <p class="text-gray-300 text-center">Git Hub</p></li>
+    <li class="text-gray-300 text-center"> <img  src="img/postman.png" style="width:70px; height:70px; "> 
+    <p>Post Man</p></li>
+    <li class="text-gray-300 text-center mt-3"> <img src="img/vscode.png" alt=""style="width:60px; height:60px; ">
+    <p>VS Code</p> </li>
+    <li class="text-gray-300 text-center"> <img src="img/Netlify.png" alt=""style="width:100px; height:90px; ">
+      <p class="-mt-4">Netlify</p> </li>
+  </ul>
+</div>
+</div>
+                  <!--Experience -->
+
+    <!-- <h1 class="text-cyan font-bold text-2xl font-serif"> Experience :-</h1>
+    <h3>Rainbow Children Hospital,Intern </h3>
+    <h3>position-Intern</h3>
+    <h3>2023-2024</h3> -->
+    <section id="experience" class="experience bg-black text-white py-10">
+      <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-cyan font-bold text-2xl font-serif mb-8">Experience </h2>
+        
+        <div class="relative border-l border-blue-500 ml-36">
+          <!-- Single Timeline Item -->
+          <div class="mb-10 ml-6">
+            <span class=" absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-2 " ></span>
+            <div class="flex items-center mb-1">
+              <img src="img/rainbow child.png" alt="Rainbow Children's Hospital Logo" class="h-[50px] w-[50px;] mr-2 rounded-full flex">
+              <span class="text-gray-400 text-sm flex">- Rainbow Children's Hospital</span>
+            </div>
+              <h3 class="text-lg font-semibold text-blue-400  pl-14 font-serif">Intern-Digital marketing</h3>
+              <ul class=" text-sm leading-relaxed mt-2 pl-14 list-disc text-gray-400">
+              <li>Developed and maintained the hospital's website, ensuring that information was always accurate and up-to-date for users.</li>
+              <li>Gained hands-on experience in digital marketing strategies and content management systems (CMS).</li>   </ul>        
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- for Education &  courses -->
+   
+        
+    <section id="education" class="education bg-black text-white py-10 ">
+      <div class="container mx-auto px-6 md:px-12 "> 
+        <h2 class="text-cyan font-bold text-2xl font-serif mb-8 left-36 ">Education & Courses</h2>
+    
+        <div class="relative border-l border-blue-500  pl-4 ml-36">
+          <!-- Timeline Item for FSD in Guvi -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/guvi.webp" alt="Guvi Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div>
+              <h6 class=" text-gray-400 text-sm mt-4 font-semibold">- Guvi</h6>
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">Full Stack Development (FSD)</h3>
+              <span class="text-gray-400 text-sm ml-2">Aug 2024 - Dec 2024</span>
+              
+            </div>
+          </div>
+    
+          <!-- Timeline Item for Internship -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/rainbow child.png" alt="Rainbow Children's Hospital Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div class="relative top-3">             
+               <span class="text-gray-400 text-sm font-semibold">- Rainbow Children's Hospital</span>
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">Internship-Digital Marketing </h3>
+              <span class="text-gray-400 text-sm ml-2">2023 - 2024</span>
+            </div>
+          </div>
+    
+          <!-- Timeline Item for Computer Science Degree -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/MAM.avif" alt="MAM College Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div class="relative top-3">
+              <span class="text-gray-400 text-sm mt-10 font-semibold">- MAM College of Engineering, Trichy</span>
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">B.E in Computer Science Engineering</h3>
+              <span class="text-gray-400 text-sm ml-2">(GCPA: 7.64)</span><br>
+              <span class="text-gray-400 text-sm ml-2">2019 - 2023</span>
+            </div>
+          </div>
+    
+          <!-- Timeline Item for Web Designing Course -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/MIT.jpg" alt="MIT Institute Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div class="relative top-3"> 
+              <span class="text-gray-400 text-sm font-semibold">- MIT Institute, Trichy</span>
+
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">Web Designing Using HTML, CSS</h3>
+              <span class="text-gray-400 text-sm ml-2">2019 - 2023</span>
+            </div>
+          </div>
+    
+          <!-- Timeline Item for 12th Grade -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/DVM.png" alt="Dalmia Higher Secondary School Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div class="relative top-3"> 
+              <span class="text-gray-400 text-sm font-semibold">- Dalmia Higher Secondary School, Trichy</span>
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">12<sup>th</sup> Grade</h3>
+              <span class="text-gray-400 text-sm ml-2">2018 - 2019</span>
+            </div>
+          </div>
+    
+          <!-- Timeline Item for 10th Grade -->
+          <div class="mb-10 flex items-start relative">
+            <span class="absolute w-4 h-4 bg-blue-500 rounded-full -left-6 top-1/2 transform -translate-y-1/2"></span>
+            <img src="img/DVM.png" alt="Dalmia Higher Secondary School Logo" class="h-[50px] w-[50px] rounded-full mr-2">
+            <div class="relative top-3 "> 
+              <span class="text-gray-400 text-sm font-semibold ">- Dalmia Higher Secondary School, Trichy</span>
+              <h3 class="text-lg font-semibold text-blue-400 font-serif ml-2">10<sup>th</sup>  Grade</h3>
+              <span class="text-gray-400 text-sm ml-2">2017 - 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- certificate -->
+ <!-- Certificates Section -->
+<section id="certificates" class="bg-gradient-to-b from-black  to-slate-950text-white py-12 px-8">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-cyan font-bold text-2xl font-serif mb-8 relative right-16">Certificates </h2>
+
+    <!-- Responsive Grid for 3 Certificates -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Certificate 1 -->
+      <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-[0_0_15px_rgba(139,92,246,0.8)] transition-transform duration-300">
+        <img src="img/MIT cert.jpg" alt="Certificate 1" class="w-full h-48 object-cover cursor-pointer rounded-t-lg" onclick="showModal('certificate1')">
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold">WEB Designing </h3>
+          <p class="text-sm text-gray-400 mt-1">MIT Institute</p>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-[0_0_15px_rgba(139,92,246,0.8)] transition-transform duration-300">
+        <img src="path/to/certificate2.jpg" alt="Certificate 2" class="w-full h-48 object-cover cursor-pointer rounded-t-lg" onclick="showModal('certificate2')">
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold">Full Stack Development</h3>
+          <p class="text-sm text-gray-400 mt-1">Guvi</p>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-[0_0_15px_rgba(139,92,246,0.8)] transition-transform duration-300">
+        <img src="path/to/certificate3.jpg" alt="Certificate 3" class="w-full h-48 object-cover cursor-pointer rounded-t-lg" onclick="showModal('certificate3')">
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold">Internship</h3>
+          <p class="text-sm text-gray-400 mt-1">Rainbow Children Hospital</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-Page Modal for Each Certificate -->
+<div id="certificate1" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4 backdrop-blur-sm">
+  <div class="relative max-w-3xl w-full mx-auto">
+    <button onclick="closeModal('certificate1')" class="absolute right-52 -top-3 text-white hover:text-red-700 bg-red-700 rounded-full p-2 hover:bg-black  transition duration-200 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img src="img/MIT cert.jpg" alt="Certificate 1" class="w-5/6 h-full max-h-[90vh] object-contain rounded-lg shadow-lg transition-all duration-300">
+  </div>
+</div>
+
+<!-- (Repeat Modal Structure for Certificate 2 and Certificate 3) -->
+
+<!-- JavaScript for Modal Functionality -->
+<script>
+  function showModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById(id).classList.add('flex');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+    document.getElementById(id).classList.remove('flex');
+  }
+</script> 
+</section>
+
+
+
+    <!-- projects section -->
+<section class="">
+  <section class="bg-black  text-white w-full h-full">
+    <a id="project" class="flex items-center space-x-2 justify-center p-5">
+      <!-- New SVG icon with blinking effect -->
+      
+      <!-- Responsive text size with gradient -->
+      <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent  py-5 bg-clip-text bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600">
+        Projects
+      </div>
+    </a>
+ 
+  
+  <!--list the projects -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inconsolata|Merriweather');
+
+
+        #portfolio {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased width */
+            gap: 16px; /* Adjust gap for spacing */
+            padding: 16px; /* Add padding for aesthetic */
+        }
+
+        .project {
+            position: relative;
+            background: #F2DAD7;
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden;
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: transform 0.3s ease; /* Add a hover effect */
+            height: 230px;; /* Adjust height */
+        }
+
+        .project:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        .project img {
+            width: 100%;
+            height: 100%; /* Make image fill the height */
+            object-fit: cover; /* Ensure the image covers the area */
+            opacity: 0.9;
+            display: block; /* Ensures no space below the image */
+        }
+
+        .grid__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Black transparent overlay */
+            display: flex;
+            flex-direction: column; /* Align items in column */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            transform: translateY(100%);
+            transition: transform 0.3s ease; /* Transition for overlay */
+        }
+
+        .project:hover .grid__overlay {
+            transform: translateY(0); /* Show overlay on hover */
+        }
+
+        .viewbutton {
+            background: none;
+            outline: none;
+            font-weight: 100;
+            letter-spacing: 2px;
+            border: 2px solid #ffffff; /* Thicker border */
+            color: #ffffff;
+            text-transform: uppercase;
+            padding: 6px 10px; /* Increased button padding */
+            margin-bottom: 10px; /* Space from bottom */
+            cursor: pointer; /* Pointer cursor */
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease; /* Smooth transition */
+
+            margin-top: 30px;
+        }
+
+        .viewbutton:hover {
+            background: darkblue; /* Change background to blue on hover */
+            color: #ffffff; /* Keep text color white */
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        .project-title {
+            color: #ffffff; /* White color for the title */
+            font-size: 1em; /* Adjust title size */
+            text-align: center; /* Center the title */
+            display: none; /* Hide title by default */
+        }
+
+        .project:hover .project-title {
+            display: block; /* Show title on hover */
+        }
+    </style>
+</head>
+<body>
+
+<section id="portfolio">
+    <div class="project" onclick="location.href='https://66dc3b0db17828bb1ff3dace--musical-bienenstitch-9588b8.netlify.app/';">
+        <img class="project__image" src="img/lamding html.jpeg" />
+        <p>websites</p>
+        <h3 class="grid__title"> </h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Landing page Usimg Html,CSS</span> <!-- Project title -->
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://main--papaya-marzipan-0971cc.netlify.app/';">
+        <img class="project__image" src="img/Landing tailwind.jpeg" />
+        <p>pure css</p>
+        <h3 class="grid__title"> </h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">know More</button>
+            <span class="project-title">Landing page using Tailwind CSS</span> <!-- Project title -->
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://66ee9d981170332e0cbfa59c--euphonious-travesseiro-b407bd.netlify.app/';">
+        <img class="project__image " src="img/Flip game.jpeg" />
+        <p>web apps</p>
+        <h3 class="grid__title"></h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Memory Flip Game Using JavaScript</span> <!-- Project title -->
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://66f7d0e9e1063ba99a74f7ef--darling-rolypoly-bc023a.netlify.app/';">
+        <img class="project__image" src="img/expense.jpeg" />
+        <p>daily ui</p>
+        <h3 class="grid__title"></h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Income & Expense Traker</span> <!-- Project title -->
+        </div>
+    </div>
+
+    <!-- Additional projects -->
+    <div class="project" onclick="location.href='https://neon-boba-859f45.netlify.app/';">
+        <img class="project__image" src="img/addtocart.jpeg" />
+        <p>project 5</p>
+        <h3 class="grid__title"> </h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Add TO Cart Using React</span>
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://splendid-frangipane-0e477b.netlify.app/';">
+        <img class="project__image" src="img/routingAPI.jpeg" />
+        <p>project 6</p>
+        <h3 class="grid__title"> project type</h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Add to Cart Using API & Router in React </span>
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://yourprojecturl7.com';">
+        <img class="project__image" src="https://images.unsplash.com/photo-1481762554390-ff5562748bdf?ixlib=rb-0.3.5&s=1b7f850b7f8f702e237b0f81c0ec0bf5&auto=format&fit=crop&w=700&q=80" />
+        <p>project 7</p>
+        <h3 class="grid__title"> project type</h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Project 7</span>
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://yourprojecturl8.com';">
+        <img class="project__image" src="https://images.unsplash.com/photo-1512791907155-e44b77ed1de2?ixlib=rb-0.3.5&s=182337244e76e82a3f04d663de0d579f&auto=format&fit=crop&w=700&q=80" />
+        <p>project 8</p>
+        <h3 class="grid__title"> project type</h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Project 8</span>
+        </div>
+    </div>
+
+    <div class="project" onclick="location.href='https://yourprojecturl9.com';">
+        <img class="project__image" src="https://images.unsplash.com/photo-1544005313-94ddf0286df4?ixlib=rb-0.3.5&s=1d21b685152a128d231c998b8493d1c1&auto=format&fit=crop&w=700&q=80" />
+        <p>project 9</p>
+        <h3 class="grid__title"> project type</h3>
+        <div class="grid__overlay">
+            <button class="viewbutton">Know More</button>
+            <span class="project-title">Project 9</span>
+        </div>
+    </div>
+</section>
+
+<script> 
+  const buttons = document.querySelectorAll('.project');
+
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          const url = this.getAttribute('onclick')
+                        .replace("location.href='", "")
+                        .replace("';", "");
+          window.open(url, '_blank', 'noopener,noreferrer'); // Opens URL in a new tab with safety features
+      });
+  });
+</script>
+</section>
+</section>
+<section id="contact" class="bg-black text-white w-full h-full p-10">
+  <h2 class="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+    Contact
+</h2>
+ 
+
+  <div class="flex justify-center space-x-4 mt-6">
+    <a href="https://www.linkedin.com/in/abdul-vahith-536722275/ " target="_blank" class="flex flex-col items-center group relative">
+      <img src="img/linedin3d.webp" alt="LinkedIn" class="w-20 h-20  transition-transform duration-300 transform group-hover:scale-125 group-hover:drop-shadow-lg">
+      <span class="mt-2 text-blue-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">LinkedIn</span>
+    </a>
+    
+    <a href="mailto:abdulvahith2023@gmail.com" target="_blank" class="flex flex-col items-center group relative">
+      <img src="img/mail-removebg-preview.png" alt="LinkedIn" class="w-20 h-20 scale-105 transition-transform duration-300 rounded-full transform group-hover:scale-125 group-hover:drop-shadow-lg">
+      <span class="mt-2 text-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">E-Mail</span>
+    </a>
+    <a href="https://wa.me/8838927850" target="_blank" class="flex flex-col items-center group relative">
+      <img src="img/ws.webp" alt="LinkedIn" class="w-20 h-20 transition-transform duration-300 rounded-full transform group-hover:scale-125 group-hover:drop-shadow-lg">
+      <span class="mt-2 text-green-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">What's App</span>
+    </a>
+    <a href="https://github.com/abdulvahith26" target="_blank" class="flex flex-col items-center group relative">
+      <img src="img/git padding.jpg " alt="LinkedIn" class="w-20 h-20 scale-75 transition-transform duration-300 rounded-2xl transform group-hover:scale-100">
+      <span class="mt-2 text-slate-200 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">Git-hub</span>
+    </a>
+    <a href="https://www.instagram.com/wizard_vahith/" target="_blank" class="flex flex-col items-center group relative">
+      <img src="img/insta.webp " alt="LinkedIn" class="w-20 h-20 transition-transform duration-300 scale-125 rounded-2xl transform group-hover:scale-150">
+      <span class="mt-2 bg-gradient-to-l text-voilent opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">Instagram</span>
+    </a>
+    
+  </div>
+
+<a href="img/Abdul Vahith resume.pdf" download> 
+  <button id="resumeButton" class="resume-button px-7 py-3 font-semibold text-xl text-white bg-yellow-500 rounded-md">
+    Resume
+  </button>
+</a>
+
+<style>
+/* Button styles */
+#resumeButton {
+  position: relative; /* Allows for the glow effect to be positioned relative to the button */
+  left: 500px;
+  padding: 10px 100px;
+  overflow: hidden; /* Ensures the inner glow effect does not overflow the button */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+/* Hover glow and scale effect */
+#resumeButton:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  box-shadow: 0 0 10px rgba(255, 223, 0, 0.6), 0 0 20px rgba(255, 223, 0, 0.4); /* Glow effect */
+}
+
+/* Inner glow effect */
+#resumeButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 223, 0, 0.3); /* Glow color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+  border-radius: inherit; /* Match the button's border radius */
+  z-index: -1; /* Send it behind the button */
+}
+
+#resumeButton:hover::before {
+  opacity: 1; /* Show inner glow on hover */
+}
+
+/* Click effect */
+#resumeButton:active {
+  transform: scale(0.95); /* Scale down on click */
+}
+
+</style>
+
+
+
+
+
+  
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home {
+  padding-top: 80px; /* Adjust to match your navbar height */
+}
+
+#projects{
+  padding-top: 80px; /* Adjust to match your navbar height */
+}
+
+#about {
+  padding-top: 80px; /* Adjust to match your navbar height */
+}
+
+.flipping-icon {
+    animation: rotate 3s infinite linear;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  .var-highlight {
+    color: #C0AD60;
+  }
+  
+  .string-highlight {
+    color: rgba(253, 149, 90, 0.8);
+  }
+  
+  #typewriter {
+    margin: 0;
+    font-family: "Courier New";
+  }
+  #typewriter:after {
+    content: "|";
+    -webkit-animation: blink 500ms linear infinite alternate;
+            animation: blink 500ms linear infinite alternate;
+  }
+  
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+  .project {
+    position: relative;
+  }
+  
+  .overlay {
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-title {
+    transition: transform 0.7s ease, opacity 0.7s ease;
+  }
+  
+
+  
+  /* Button styles */
+  .resume-button {
+    position: relative;
+    overflow: hidden;
+    margin-left: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px 100px
+  }
+
+  /* Hover glow effect */
+  .resume-button:hover {
+    transform: scale(1.05); /* Scale effect */
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.6), 0 0 20px rgba(255, 223, 0, 0.4); /* Glow effect */
+  }
+
+  /* Hover inner glow */
+  .resume-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 223, 0, 0.3); /* Glow color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  .resume-button:hover::before {
+    opacity: 1;
+  }
+
+  /* Click effect */
+  .resume-button:active {
+    transform: scale(0.95);
+  }
