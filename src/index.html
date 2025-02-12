@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <script src="script.js"></script>
+  <script src="script.js"> </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -109,7 +108,7 @@
 
     <!-- home----name & img -->
     <section id="home" class="relative flex  bg-gradient-to-r from-black to-slate-900 p-4 text-white shadow-2xl top-0 transform transition-all duration-500 ease-in-out h-screen">
-      <div class="relative z-20 top-24">
+      <div class="relative z-20">
          <div>
         <h1 class="text-6xl font-bold h-24 font-serif">Hi.. I am,</h1>
         <h1 class="text-6xl font-bold h-24 font-serif">Abdul Vahith</h1>
@@ -171,7 +170,7 @@
                                          <span class="string-highlight text-sm">'CSS'</span>];
                     }; </pre>
 
-                          <!-- <script>
+                          <script>
                               function setupTypewriter(t) {
                                   var HTML = t.innerHTML;
                       
@@ -238,7 +237,7 @@
                               var typer = document.getElementById('typewriter');
                               typewriter = setupTypewriter(typer);
                               typewriter.type();
-                          </script> -->
+                          </script>
                       
 
    <div class="pl-14  absolute">
@@ -438,7 +437,7 @@
 
       <!-- Certificate 3 -->
       <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-[0_0_15px_rgba(139,92,246,0.8)] transition-transform duration-300">
-        <img src="path/to/certificate3.jpg" alt="Certificate 3" class="w-full h-48 object-cover cursor-pointer rounded-t-lg" onclick="showModal('certificate3')">
+        <img src="img/IMG_20250212_144739_1.jpg" alt="Certificate 3" class="w-full h-48 object-cover cursor-pointer rounded-t-lg" onclick="showModal('certificate3')">
         <div class="p-4 text-center">
           <h3 class="text-lg font-semibold">Internship</h3>
           <p class="text-sm text-gray-400 mt-1">Rainbow Children Hospital</p>
@@ -459,6 +458,27 @@
     <img src="img/MIT cert.jpg" alt="Certificate 1" class="w-5/6 h-full max-h-[90vh] object-contain rounded-lg shadow-lg transition-all duration-300">
   </div>
 </div>
+<div id="certificate2" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4 backdrop-blur-sm">
+  <div class="relative max-w-3xl w-full mx-auto">
+    <button onclick="closeModal('certificate2')" class="absolute right-52 -top-3 text-white hover:text-red-700 bg-red-700 rounded-full p-2 hover:bg-black  transition duration-200 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img src="" alt="Certificate 1" class="w-5/6 h-full max-h-[90vh] object-contain rounded-lg shadow-lg transition-all duration-300">
+  </div>
+</div>
+<div id="certificate3" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4 backdrop-blur-sm">
+  <div class="relative max-w-3xl w-full mx-auto">
+    <button onclick="closeModal('certificate3')" class="absolute right-52 -top-3 text-white hover:text-red-700 bg-red-700 rounded-full p-2 hover:bg-black  transition duration-200 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img src="img/IMG_20250212_144739_1.jpg" alt="Certificate 3" class="w-5/6 h-full max-h-[90vh] object-contain rounded-lg shadow-lg transition-all duration-300">
+  </div>
+</div>
+
 
 <!-- (Repeat Modal Structure for Certificate 2 and Certificate 3) -->
 
@@ -480,13 +500,15 @@
 
     <!-- projects section -->
 <section class="">
-  <section class="bg-black  text-white w-full h-full">
+  <section class="bg-black i text-white w-full h-full">
     <a id="project" class="flex items-center space-x-2 justify-center p-5">
       <!-- New SVG icon with blinking effect -->
       
       <!-- Responsive text size with gradient -->
-      <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent  py-5 bg-clip-text bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600">
+      <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent  py-10 bg-clip-text bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600">
         Projects
+        <h2 class="text-cyan font-bold text-2xl font-serif p-5 absolute left-20">Front-End </h2>
+
       </div>
     </a>
  
@@ -647,35 +669,49 @@
         </div>
     </div>
 
-    <div class="project" onclick="location.href='https://yourprojecturl7.com';">
-        <img class="project__image" src="https://images.unsplash.com/photo-1481762554390-ff5562748bdf?ixlib=rb-0.3.5&s=1b7f850b7f8f702e237b0f81c0ec0bf5&auto=format&fit=crop&w=700&q=80" />
+
+    <div class="project" onclick="location.href='https://bucolic-nasturtium-f0e5dc.netlify.app/';">
+        <img class="project__image" src="img/movie search.PNG" />
         <p>project 7</p>
         <h3 class="grid__title"> project type</h3>
         <div class="grid__overlay">
             <button class="viewbutton">Know More</button>
-            <span class="project-title">Project 7</span>
+            <span class="project-title">Movie Search</span>
+
         </div>
     </div>
 
-    <div class="project" onclick="location.href='https://yourprojecturl8.com';">
-        <img class="project__image" src="https://images.unsplash.com/photo-1512791907155-e44b77ed1de2?ixlib=rb-0.3.5&s=182337244e76e82a3f04d663de0d579f&auto=format&fit=crop&w=700&q=80" />
+    <div class="project" onclick="location.href='https://recipes-app-k3pp.onrender.com/api/recipes/v1';">
+        <img class="project__image" src="img/res sm.JPG" />
         <p>project 8</p>
         <h3 class="grid__title"> project type</h3>
         <div class="grid__overlay">
             <button class="viewbutton">Know More</button>
-            <span class="project-title">Project 8</span>
+            <span class="project-title">recipe app(CRUD) </span>
         </div>
     </div>
 
-    <div class="project" onclick="location.href='https://yourprojecturl9.com';">
-        <img class="project__image" src="https://images.unsplash.com/photo-1544005313-94ddf0286df4?ixlib=rb-0.3.5&s=1d21b685152a128d231c998b8493d1c1&auto=format&fit=crop&w=700&q=80" />
+    <div class="project col-start-2 w-[150]" onclick="location.href='https://merry-panda-2b7423.netlify.app/';">
+        <img class="project__image" src="img/user.JPG" />
         <p>project 9</p>
-        <h3 class="grid__title"> project type</h3>
+        <h3 class="grid__title"> </h3>
         <div class="grid__overlay">
             <button class="viewbutton">Know More</button>
-            <span class="project-title">Project 9</span>
+            <span class="project-title">User Auth</span>
         </div>
     </div>
+
+    <div class="project mx-auto" onclick="location.href='https://table-reservation-system.netlify.app/';">
+      <img class="project__image" src="img/table reservation.JPG" />
+      <p>project 9</p>
+      <h3 class="grid__title"> project type</h3>
+      <div class="grid__overlay">
+          <button class="viewbutton">Know More</button>
+          <span class="project-title">Table Reservation</span>
+      </div>
+  </div>
+
+  
 </section>
 
 <script> 
@@ -716,10 +752,7 @@
       <img src="img/git padding.jpg " alt="LinkedIn" class="w-20 h-20 scale-75 transition-transform duration-300 rounded-2xl transform group-hover:scale-100">
       <span class="mt-2 text-slate-200 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">Git-hub</span>
     </a>
-    <a href="https://www.instagram.com/wizard_vahith/" target="_blank" class="flex flex-col items-center group relative">
-      <img src="img/insta.webp " alt="LinkedIn" class="w-20 h-20 transition-transform duration-300 scale-125 rounded-2xl transform group-hover:scale-150">
-      <span class="mt-2 bg-gradient-to-l text-voilent opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-bold">Instagram</span>
-    </a>
+    
     
   </div>
 
@@ -733,7 +766,7 @@
 /* Button styles */
 #resumeButton {
   position: relative; /* Allows for the glow effect to be positioned relative to the button */
-  left: 500px;
+  left: 00px;
   padding: 10px 100px;
   overflow: hidden; /* Ensures the inner glow effect does not overflow the button */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
